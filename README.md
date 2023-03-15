@@ -15,7 +15,7 @@
 
 Принимает на вход два текстовых поля `email` и `password` для идентификации пользователя
 
-https://localhost:7261/api/Game/login?email=someEmail%40here.zone&password=somePassword
+https://localhost:5001/api/Game/login?email=someEmail%40here.zone&password=somePassword
 
 В случае если для ползователя с email хэш совпадает с хэшем от поля password - метод возвращет значение `ActionResult` `Ok` со строковой переменной `token` которая используется для выполнения хода или запроса текущего статуса пользователя
 
@@ -27,7 +27,7 @@ https://localhost:7261/api/Game/login?email=someEmail%40here.zone&password=someP
 
 принимает на вход один параметр типа строка - `token`
 
-https://localhost:7261/api/Game/status?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e
+https://localhost:5001/api/Game/status?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e
 
 В случае если в БД обнаружится игровое поле для игрока с принятым `token` вернется значение `ActionResult` `Ok` со строкой json содержащей информацию о текущем статусе игры : `{"Token":"47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e","Field":[[0,0,0],[0,0,0],[0,0,0]],"Status":2}`
 
@@ -56,7 +56,7 @@ https://localhost:7261/api/Game/status?token=47e2b833b5ffd410972e3c844604ac99a74
 
 принимает на вход один параметр типа строка - `token`
 
-https://localhost:7261/api/Game/new-game?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e
+https://localhost:5001/api/Game/new-game?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e
 
 Если данных об игровом поле игрока имеющего `token` не будет обнаружено - будет выдано значение `ActionResult` `BadRequest` с текстовым сообщением `Game Not Found`
 
@@ -66,7 +66,7 @@ https://localhost:7261/api/Game/new-game?token=47e2b833b5ffd410972e3c844604ac99a
 
 принимает на вход три параметра: `token`, `raw`, `column`.
 
-https://localhost:7261/api/Game/get-move?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e&raw=1&column=2
+https://localhost:5001/api/Game/get-move?token=47e2b833b5ffd410972e3c844604ac99a74d0e43b4b5403da96af1d41cd0972e&raw=1&column=2
 
 **token** - если игра со значением `token` не обнаружена - будет выдано значение `ActionResult` `BadRequest` с текстовым сообщением `You must log in`
 
